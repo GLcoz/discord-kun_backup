@@ -51,11 +51,19 @@ const ServerSearch = ({ data }: ServerSearchProps) => {
   }) => {
     setOpen(false);
     if (type === "member") {
-      return router.push(`/servers/${params?.serverId}/conversations/${id}`);
+      if (params && params.serverId) {
+        return router.push(`/servers/${params.serverId}/conversations/${id}`);
+      } else {
+        console.error('params or params.serverId is null');
+      }
     }
 
     if (type === "channel") {
-      return router.push(`/servers/${params.serverId}/channels/${id}`);
+      if (params && params.serverId) {
+        return router.push(`/servers/${params.serverId}/channels/${id}`);
+      } else {
+        console.error('params or params.serverId is null');
+      }
     }
   };
 
