@@ -8,6 +8,13 @@
     "start": "next start",
     "lint": "next lint"
   },
+  {
+  "scripts": {
+    "build": "next build",
+    "postinstall": "prisma generate"
+  }
+}
+
   "dependencies": {
     "@clerk/nextjs": "^5.1.0",
     "@emoji-mart/data": "^1.2.1",
